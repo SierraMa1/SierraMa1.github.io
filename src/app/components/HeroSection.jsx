@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-cover bg-center bg-no-repeat w-full min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] lg:min-h-screen xl:min-h-[90vh] 2xl:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16" style={{ backgroundImage: "url('/Fondo.png')" }}>
+    <section className="relative w-full bg-cover bg-center bg-no-repeat min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] lg:min-h-screen xl:min-h-[90vh] 2xl:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16" style={{ backgroundImage: "url('/Fondo.png')" }}>
       <div className="bg-white/70 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 rounded-lg shadow-lg flex flex-col lg:flex-row items-center max-w-7xl w-full 2xl:max-w-[1920px] bg-opacity-10">
         <div className="lg:w-1/3 mb-6 lg:mb-0 lg:mr-8 xl:mr-12 2xl:mr-16">
           <Image
