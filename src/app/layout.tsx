@@ -24,12 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
-        {/* Agregar el favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* Otras configuraciones de metadatos */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
