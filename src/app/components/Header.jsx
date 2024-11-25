@@ -51,14 +51,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="container mx-auto px-4 z-10">
+        <div className="container mx-auto px-4 py-8 z-10">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
             <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px] 2xl:w-[500px] 2xl:h-[500px] relative flex-shrink-0">
               <Image
                 src="/traje.jpeg"
                 alt="María"
                 fill
-                className="rounded-full object-cover shadow-lg"
+                className="rounded-full object-cover shadow-lg py-2"
                 priority
               />
             </div>
@@ -124,11 +124,11 @@ export default function Home() {
       <header className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled ? "bg-black/90 shadow-lg" : "bg-transparent",
-  "max-w-screen-2xl mx-auto"
+  "max-w-screen-3xl mx-auto"
       )}>
         <div className="container mx-auto px-0">
           <div className="flex justify-between items-center py-4">
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/Header" className="text-xl font-bold">
               MariaSierraDev
             </Link>
             
