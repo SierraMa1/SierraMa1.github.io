@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* import Image from "next/image";
 import Link from "next/link";
 
 import WaveImage from "@/components/ave";
@@ -24,4 +24,4 @@ const PortfolioPage = () => {
     );
 }
 
-export default PortfolioPage;
+export default PortfolioPage; */
