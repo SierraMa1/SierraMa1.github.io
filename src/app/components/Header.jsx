@@ -10,7 +10,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visibleWords, setVisibleWords] = useState([]);
-  const words = ['Sierra', ` `, 'Sánchez'];
+  const words = ['Sierra ', ' ', 'Sánchez'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,9 +66,9 @@ export default function Home() {
             <div className="max-w-full md:max-w-2xl text-center md:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                 María {visibleWords.map((word, index) => (
-                  <span key={index} className="inline-block transition-opacity duration-600">
+                  <span key={index} className="transition-opacity duration-600">
                     {word}
-                    {index < visibleWords.length - 1 && ' '}
+                    {index < visibleWords.length - 1}
                   </span>
                 ))}
               </h1>
