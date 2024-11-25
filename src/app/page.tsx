@@ -2,7 +2,7 @@
 import Header from './components/Header'
 import ProjectsSection from './components/ProjectsSection'
 import Footer from './components/Footer'
-import Wave from './components/wave'
+/*import Wave from './components/wave'*/
 
 export default function Home() {
   return (
