@@ -10,7 +10,6 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visibleWords, setVisibleWords] = useState([]);
-  const words = ['Sierra ', ' ', 'Sánchez'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +20,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const words = ['Sierra ', 'Sánchez'];
     words.forEach((word, index) => {
       setTimeout(() => {
         setVisibleWords((prev) => [...prev, word]);
       }, index * 1000); // Aparece cada segundo
     });
-  }, [words]);
+  }, []);
 
   const scrollToContent = () => {
     window.scrollTo({
