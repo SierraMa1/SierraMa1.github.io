@@ -26,7 +26,7 @@ export default function Home() {
         setVisibleWords((prev) => [...prev, word]);
       }, index * 1000); // Aparece cada segundo
     });
-  }, []);
+  }, [words]);
 
   const scrollToContent = () => {
     window.scrollTo({
