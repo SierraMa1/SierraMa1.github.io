@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, ChevronDown, Github, Linkedin } from 'lucide-react'
 import { cn } from "@/lib/utils"
+import ProjectsSection from '../components/ProjectsSection';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -148,7 +149,7 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/proyectos" className="hover:text-[#A78BFA] transition-colors">
+                  <Link href="/ProjectsSection" className="hover:text-[#A78BFA] transition-colors">
                     Proyectos
                   </Link>
                 </li>
