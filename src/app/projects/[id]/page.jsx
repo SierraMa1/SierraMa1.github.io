@@ -7,31 +7,23 @@ import Link from 'next/link';
 import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 import { useRouter } from 'next/navigation'; // Solo usamos esta fuente
 import { projects } from '../../components/ProjectsSection'; // Ajusta la ruta según sea necesario
+import { use } from 'react';
+
 
 export default function ProjectDetail({ params }) {
-  const router = useRouter();
-  const { id } = params || {}; // Asegúrate de que `params` contiene el ID de la ruta
+  // Resolver `params` con React.use()
+  const { id } = use(params);
 
-  const [project, setProject] = useState(null);
-
-  useEffect(() => {
-    if (id) {
-      const projectId = parseInt(id, 10);
-      if (!isNaN(projectId)) {
-        const foundProject = projects.find((p) => p.id === projectId);
-        setProject(foundProject);
-      }
-    }
-  }, [id]);
+  const project = projects.find(p => p.id === parseInt(id, 10));
 
   if (!project) {
-    return <div>Cargando...</div>;
+    return <div>Proyecto no encontrado</div>;
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
       <div className="container mx-auto px-4">
-        <Link href="/projects" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8">
+        <Link href="/ProjectsSection" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8">
           <ArrowLeft className="mr-2" size={20} />
           Volver a proyectos
         </Link>

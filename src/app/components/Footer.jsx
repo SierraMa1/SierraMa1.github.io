@@ -5,7 +5,7 @@ import { Linkedin, Github, Mail, Copy, Check } from 'lucide-react'
 
 export default function Footer() {
   const [isCopied, setIsCopied] = useState(false)
-  const email = "maria.sierra.sanchez@hotmail.com"
+  const email = "info@mariasierrasanchez.com"
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email).then(() => {
