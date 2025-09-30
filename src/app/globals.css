@@ -70,3 +70,37 @@ body {
     @apply bg-background text-foreground;
   }
 }
+/* src/app/globals.css */
+
+/* Estilos personalizados para la navegación de Swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff !important; /* Color de las flechas */
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 1;
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff !important; /* Color de los puntos */
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+/* src/app/globals.css */
+
+
+
+/* --- Estilos para los botones de navegación de Swiper --- */
+
+/* Oculta las flechas por defecto de Swiper, ya que usaremos las nuestras */
+#proyectos .swiper-button-prev,
+#proyectos .swiper-button-next {
+  display: none;
+}

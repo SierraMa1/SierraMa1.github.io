@@ -1,113 +1,116 @@
-'use client';
+// src/app/projects/[id]/page.jsx
+'use client'
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useParams } from 'next/navigation'; // <-- 1. IMPORTAMOS useParams
+import { projectsData } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // Solo usamos esta fuente
-import { projects } from '../../components/ProjectsSection'; // Ajusta la ruta según sea necesario
-import { use } from 'react';
+import { Github, ExternalLink, ArrowLeft, Zap, Target, PackageCheck } from 'lucide-react';
 
+function getProjectById(id) {
+  return projectsData.find((project) => project.id === parseInt(id));
+}
 
-export default function ProjectDetail({ params }) {
-  // Resolver `params` con React.use()
-  const { id } = use(params);
+export default function ProjectPage() { // <-- 2. QUITAMOS { params } DE AQUÍ
+  const params = useParams(); // <-- 3. USAMOS EL HOOK PARA OBTENER LOS PARÁMETROS
+  const project = getProjectById(params.id);
 
-  const project = projects.find(p => p.id === parseInt(id, 10));
+  const handlePrivateLinkClick = (e) => {
+    e.preventDefault();
+    alert("Estos datos no son mostrados por privacidad de la consultoría.");
+  };
 
   if (!project) {
-    return <div>Proyecto no encontrado</div>;
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <h1 className="text-2xl font-bold">Proyecto no encontrado</h1>
+      </div>
+    );
   }
 
+  const linkClassName = "inline-flex items-center justify-center px-5 py-2.5 text-base rounded-lg transition-colors font-semibold";
+  const githubClassName = `${linkClassName} bg-gray-800 text-white hover:bg-gray-900`;
+  const demoClassName = `${linkClassName} bg-violet-600 text-white hover:bg-violet-700`;
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
-      <div className="container mx-auto px-4">
-        <Link href="/ProjectsSection" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8">
-          <ArrowLeft className="mr-2" size={20} />
-          Volver a proyectos
+    <div className="bg-white py-12">
+      <div className="container mx-auto max-w-4xl px-4">
+        
+        <Link href="/#proyectos" className="mb-8 inline-flex items-center text-violet-600 hover:text-violet-800 font-semibold transition-colors">
+          <ArrowLeft size={18} className="mr-2" />
+          Volver a todos los proyectos
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-xl"
-        >
-          <div className="relative h-96">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="p-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
-            <p className="text-xl text-gray-600 mb-8">{project.description}</p>
-
-            {/* Características principales */}
-            {project.features && (
-              <>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Características principales</h2>
-                <ul className="list-disc pl-6 mb-8">
-                  {project.features.map((feature, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="text-gray-600 mb-2"
-                    >
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            {/* Tecnologías utilizadas */}
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Tecnologías utilizadas</h2>
-            <div className="flex flex-wrap gap-4 mb-8">
-              {project.technologies.map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex flex-col items-center"
-                >
-                  <span className={`px-4 py-2 rounded-full text-white bg-blue-500`}>
-                    {tech}
-                  </span>
-                </motion.div>
-              ))}
+        <h1 className="mb-2 text-4xl font-bold text-gray-900">{project.title}</h1>
+        
+        <div className="relative mb-8 h-96 w-full overflow-hidden rounded-lg shadow-lg mt-6">
+          <Image src={project.image} alt={`Imagen de ${project.title}`} fill className="object-cover" />
+        </div>
+        
+        {project.detailedDescription && (
+          <div className="space-y-10">
+            <div>
+              <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-4">
+                <Zap size={24} className="mr-3 text-violet-600" /> Contexto del Proyecto
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed">{project.detailedDescription.contexto}</p>
             </div>
-
-            {/* Enlaces */}
-            <div className="flex justify-center space-x-4">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                <Github size={20} className="mr-2" />
-                Ver en GitHub
-              </a>
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-              >
-                <ExternalLink size={20} className="mr-2" />
-                Ver Demo
-              </a>
+            <div>
+              <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-4">
+                <Target size={24} className="mr-3 text-violet-600" /> Retos Principales
+              </h2>
+              <ul className="list-disc list-inside space-y-2 text-lg text-gray-700">
+                {project.detailedDescription.retos.map((reto, index) => (
+                  <li key={index}>{reto}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-4">
+                <PackageCheck size={24} className="mr-3 text-violet-600" /> Soluciones Propuestas
+              </h2>
+              <ul className="list-disc list-inside space-y-2 text-lg text-gray-700">
+                {project.detailedDescription.soluciones.map((solucion, index) => (
+                  <li key={index}>{solucion}</li>
+                ))}
+              </ul>
             </div>
           </div>
-        </motion.div>
+        )}
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Tecnologías y Enlaces</h2>
+            <div className="flex flex-wrap gap-3 mb-6">
+                {project.technologies.map((tech) => (
+                    <span key={tech} className="rounded-full bg-violet-100 px-4 py-2 text-sm font-medium text-violet-800">{tech}</span>
+                ))}
+            </div>
+            <div className="flex gap-4">
+                {project.github === 'private' ? (
+                  <button onClick={handlePrivateLinkClick} className={githubClassName}>
+                    <Github size={18} className="mr-2" />
+                    Ver en GitHub
+                  </button>
+                ) : (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className={githubClassName}>
+                    <Github size={18} className="mr-2" />
+                    Ver en GitHub
+                  </a>
+                )}
+                {project.demo === 'private' ? (
+                  <button onClick={handlePrivateLinkClick} className={demoClassName}>
+                    <ExternalLink size={18} className="mr-2" />
+                    Ver Demo
+                  </button>
+                ) : (
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className={demoClassName}>
+                    <ExternalLink size={18} className="mr-2" />
+                    Ver Demo
+                  </a>
+                )}
+            </div>
+        </div>
+
       </div>
     </div>
   );
