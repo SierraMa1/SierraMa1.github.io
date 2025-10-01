@@ -1,5 +1,4 @@
-'use client'
-
+// src/app/projects/[id]/page.jsx
 
 import { projectsData } from '@/data/projects'; 
 
@@ -8,8 +7,10 @@ export function generateStaticParams() {
     id: project.id.toString(), 
   }));
 }
+// ✅ NUEVO CÓDIGO TERMINA AQUÍ
 
 
+'use client'
 
 import { useParams } from 'next/navigation';
 import Image from 'next/image';

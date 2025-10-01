@@ -1,6 +1,7 @@
 'use client'
 
 
+
 import { projectsData } from '@/data/projects'; 
 
 export function generateStaticParams() {
@@ -8,6 +9,7 @@ export function generateStaticParams() {
     id: project.id.toString(), 
   }));
 }
+
 
 
 

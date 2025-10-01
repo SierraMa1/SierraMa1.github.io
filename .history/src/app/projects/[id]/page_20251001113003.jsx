@@ -1,15 +1,16 @@
-'use client'
+// src/app/projects/[id]/page.jsx
 
-
-import { projectsData } from '@/data/projects'; 
+import { projectsData } from '@/data/projects'; // <-- Usaremos esto
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
-    id: project.id.toString(), 
+    id: project.id.toString(), // Importante: el 'id' debe ser un string
   }));
 }
+// ✅ NUEVO CÓDIGO TERMINA AQUÍ
 
 
+'use client'
 
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
