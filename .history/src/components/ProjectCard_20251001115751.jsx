@@ -40,7 +40,7 @@ export default function ProjectCard({ project }) {
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
           <div className="mb-4 flex items-center">
-            {/* RenderIcon para mostrar el icono dinámicamente */}
+            {/* Usamos RenderIcon para mostrar el icono dinámicamente */}
             <div className="mr-4 rounded-full bg-violet-100 p-3">
               <RenderIcon name={project.icon} className="h-6 w-6 text-violet-600" />
             </div>

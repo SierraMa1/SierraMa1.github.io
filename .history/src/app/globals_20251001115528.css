@@ -71,6 +71,7 @@ body {
   }
 }
 
+
 /* Estilos personalizados para la navegación de Swiper */
 .swiper-button-prev,
 .swiper-button-next {
@@ -92,6 +93,9 @@ body {
 .swiper-pagination-bullet-active {
   opacity: 1 !important;
 }
+/* src/app/globals.css */
+
+
 
 /* --- Estilos para los botones de navegación de Swiper --- */
 

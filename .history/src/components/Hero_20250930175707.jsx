@@ -1,13 +1,17 @@
-
+// src/components/Hero.jsx
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+// SOLUCIÓN: Quitamos 'EffectFade' de los módulos
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import Link from 'next/link';
 
+// Importa los estilos de Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+// Ya no necesitamos los estilos de 'fade'
+// import 'swiper/css/effect-fade';
 
 export default function Hero() {
   return (

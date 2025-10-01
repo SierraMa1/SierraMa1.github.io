@@ -1,3 +1,5 @@
+// src/app/projects/[id]/page.jsx
+
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 
@@ -7,17 +9,17 @@ export async function generateStaticParams() {
   }));
 }
 
+// Esta función es síncrona porque solo busca en un array local.
 function getProjectById(id) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-// El componente DEBE ser 'async' para poder usar 'await'
-export default async function ProjectPage({ params }) {
-  //  Resolvemos la promesa de 'params' antes de usarla.
-  const resolvedParams = await params;
+// El 'async' en el componente de página ya no es necesario.
+export default function ProjectPage({ params }) {
+  //  Extraemos 'id' del objeto params primero.
+  const { id } = params; 
   
-  // Ahora usamos el objeto resuelto para obtener el id.
-  const { id } = resolvedParams;
+  // Luego, pasamos la variable 'id' (ya resuelta) a la función.
   const project = getProjectById(id);
 
   return <ProjectDetailsClient project={project} />;

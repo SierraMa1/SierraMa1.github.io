@@ -48,7 +48,7 @@ export default function ProjectsSection() {
 
           <div className="lg:w-2/3">
             <Swiper
-              //  USAMOS onSwiper PARA CAPTURAR LA INSTANCIA DE SWIPER
+              // 4. USAMOS onSwiper PARA CAPTURAR LA INSTANCIA DE SWIPER
               onSwiper={setSwiperInstance}
               modules={[EffectCoverflow]} // Quitamos Navigation porque lo controlamos manualmente
               effect={'coverflow'}
@@ -71,7 +71,7 @@ export default function ProjectsSection() {
               ))}
             </Swiper>
 
-            {/* AÑADIMOS onClick A LOS BOTONES PARA LLAMAR A NUESTRAS FUNCIONES */}
+            {/* 5. AÑADIMOS onClick A LOS BOTONES PARA LLAMAR A NUESTRAS FUNCIONES */}
             <div className="mt-8 flex justify-center gap-4">
               <button onClick={handlePrev} className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition hover:bg-gray-100">
                 <ArrowLeft size={24} />

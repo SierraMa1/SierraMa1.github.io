@@ -1,11 +1,11 @@
-'use client';
+// src/components/ProjectCard.jsx
+'use client'; // Necesario para usar hooks y porque es interactivo
 
 import Link from 'next/link';
 import Image from 'next/image';
-// Importamos todos los iconos que vamos a necesitar
 import { Stethoscope, Lightbulb, BrainCircuit, Target, ArrowRight } from 'lucide-react';
 
-// Mapa para asociar el texto con el componente del icono
+// 1. Mapa para traducir el texto del icono al componente real
 const iconMap = {
   Stethoscope,
   Lightbulb,
@@ -13,7 +13,7 @@ const iconMap = {
   Target,
 };
 
-// Componente auxiliar para renderizar el icono correcto
+// 2. Componente auxiliar para renderizar el icono
 const RenderIcon = ({ name, ...props }) => {
   const IconComponent = iconMap[name];
   if (!IconComponent) return null;
@@ -21,7 +21,7 @@ const RenderIcon = ({ name, ...props }) => {
 };
 
 
-// Componente ProjectCard que recibe el objeto 'project' completo
+// 3. Tu componente ProjectCard que recibe el objeto 'project' completo
 export default function ProjectCard({ project }) {
   return (
     <Link href={`/projects/${project.id}`} className="group mb-8 flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-sm transition-all hover:shadow-lg md:flex-row">
@@ -40,7 +40,7 @@ export default function ProjectCard({ project }) {
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
           <div className="mb-4 flex items-center">
-            {/* RenderIcon para mostrar el icono dinámicamente */}
+            {/* 4. Usamos RenderIcon para mostrar el icono dinámicamente */}
             <div className="mr-4 rounded-full bg-violet-100 p-3">
               <RenderIcon name={project.icon} className="h-6 w-6 text-violet-600" />
             </div>

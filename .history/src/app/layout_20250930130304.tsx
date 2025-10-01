@@ -1,8 +1,8 @@
-
+// app/layout.tsx
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot"; 
+import Chatbot from "@/components/Chatbot"; // <-- 1. CAMBIA ESTA LÍNEA
 
 export const metadata = {
   title: "María Sierra Sánchez | Desarrolladora Web",
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
-        <Chatbot /> {}
+        <Chatbot /> {/* <-- 2. Y ESTA OTRA */}
       </body>
     </html>
   );

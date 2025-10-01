@@ -1,6 +1,5 @@
-// src/data/projects.js
 
-// NO debe haber ningún 'import' de 'lucide-react' en este archivo.
+import { Stethoscope, Lightbulb, BrainCircuit, Target } from 'lucide-react';
 
 export const projectsData = [
   {
@@ -11,10 +10,10 @@ export const projectsData = [
     github: "https://github.com/SierraMa1/ClinicaCasasnovas",
     demo: "https://www.clinicacasasnovas.com/",
     technologies: ["Vue.js", "Tailwind CSS", "Node.js", "Express.js"],
-    icon: "Stethoscope", // ✅ CORRECCIÓN: Usar el nombre como texto (string)
+    icon: Stethoscope,
     detailedDescription: {
       contexto: "Diseñé y desarrollé la nueva identidad digital de la clínica desde cero para modernizar su presencia online y optimizar la captación de nuevos pacientes, proveyendo una solución tecnológica integral 'llave en mano'.",
-      retos: ["Digitalizar el flujo de trabajo clínico para eliminar procesos manuales.", "Mejorar radicalradicalmente la eficiencia operativa del equipo.", "Gestionar el ciclo de vida técnico completo, desde el dominio hasta el despliegue."],
+      retos: ["Digitalizar el flujo de trabajo clínico para eliminar procesos manuales.", "Mejorar radicalmente la eficiencia operativa del equipo.", "Gestionar el ciclo de vida técnico completo, desde el dominio hasta el despliegue."],
       soluciones: ["Creación de una Single Page Application (SPA) con Vue.js.", "Implementación de un sistema interno basado en tablets y software de gestión.", "Asesoría tecnológica continua y formación al personal en nuevas herramientas."]
     }
   },
@@ -26,7 +25,7 @@ export const projectsData = [
     technologies: ["React.js", "MySQL", "Tailwind CSS", "Node.js", "Express", "Docker"],
     github: "https://github.com/SierraMa1/ProyectoCFGS/",
     demo: "https://electricfinder.es",
-    icon: "Lightbulb", // ✅ CORRECCIÓN: Usar el nombre como texto (string)
+    icon: Lightbulb,
     detailedDescription: {
       contexto: "Creación de un marketplace digital desde cero para conectar a usuarios con electricistas cualificados, simplificando el proceso de búsqueda, evaluación y obtención de presupuestos.",
       retos: ["Diseñar una arquitectura full-stack escalable desde cero.", "Liderar el proceso de diseño UI/UX desde el prototipado hasta la implementación.", "Asegurar la fiabilidad y facilidad de despliegue de la aplicación."],
@@ -41,7 +40,7 @@ export const projectsData = [
     github: "private",
     demo: "private",
     technologies: ["Estrategia Digital", "IA", "Roadmap Técnico", "Cultura Organizacional"],
-    icon: "BrainCircuit", // ✅ CORRECCIÓN: Usar el nombre como texto (string)
+    icon: BrainCircuit,
     detailedDescription: {
       contexto: "Lideré una consultoría 360º para alinear la visión de innovación a largo plazo de la compañía con su realidad tecnológica y organizacional, enfocada en su producto B2C.",
       retos: [
@@ -64,7 +63,7 @@ export const projectsData = [
     github: "private",
     demo: "private",
     technologies: ["Análisis de Datos", "CRM", "Buyer Persona", "Business Model Canvas"],
-    icon: "Target", // ✅ CORRECCIÓN: Usar el nombre como texto (string)
+    icon: Target,
     detailedDescription: {
       contexto: "Realicé un diagnóstico de madurez digital para la división B2B, BeSoccer Pro, con el fin de formular un plan de acción que profesionalizara sus operaciones y tecnología.",
       retos: [

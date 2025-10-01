@@ -13,7 +13,7 @@ function getProjectById(id) {
 
 // El componente DEBE ser 'async' para poder usar 'await'
 export default async function ProjectPage({ params }) {
-  //  Resolvemos la promesa de 'params' antes de usarla.
+  // ✅ CAMBIO CLAVE: Resolvemos la promesa de 'params' antes de usarla.
   const resolvedParams = await params;
   
   // Ahora usamos el objeto resuelto para obtener el id.
