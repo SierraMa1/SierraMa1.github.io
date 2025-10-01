@@ -35,7 +35,7 @@ export async function generateStaticParams() {
 function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
-// LÍNEA PARA DESACTIVAR LA REGLA DE ESLINT
+// ✅ AÑADIMOS ESTA LÍNEA PARA DESACTIVAR LA REGLA DE ESLINT
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ProjectPage({ params }: any) {
   const { id } = params;
