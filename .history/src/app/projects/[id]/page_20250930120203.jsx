@@ -1,21 +1,8 @@
 // src/app/projects/[id]/page.jsx
-
-import { projectsData } from '@/data/projects'; // <-- Usaremos esto
-
-// ✅ NUEVO CÓDIGO EMPIEZA AQUÍ
-// Esta función se ejecuta en el servidor durante el 'build'
-// para decirle a Next.js qué páginas estáticas debe crear.
-export function generateStaticParams() {
-  return projectsData.map((project) => ({
-    id: project.id.toString(), // Importante: el 'id' debe ser un string
-  }));
-}
-// ✅ NUEVO CÓDIGO TERMINA AQUÍ
-
-
 'use client'
 
-import { useParams } from 'next/navigation';
+import { useParams } from 'next/navigation'; // <-- 1. IMPORTAMOS useParams
+import { projectsData } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, ExternalLink, ArrowLeft, Zap, Target, PackageCheck } from 'lucide-react';
@@ -24,8 +11,8 @@ function getProjectById(id) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-export default function ProjectPage() {
-  const params = useParams();
+export default function ProjectPage() { // <-- 2. QUITAMOS { params } DE AQUÍ
+  const params = useParams(); // <-- 3. USAMOS EL HOOK PARA OBTENER LOS PARÁMETROS
   const project = getProjectById(params.id);
 
   const handlePrivateLinkClick = (e) => {
