@@ -33,7 +33,7 @@ export const projectsData = [
             description: "Reducción estimada del tiempo dedicado a tareas administrativas."
         },
         {
-            //metric: "100%",
+            metric: "100%",
             description: "Digitalización del flujo de trabajo clínico, eliminando el papel."
         },
         {

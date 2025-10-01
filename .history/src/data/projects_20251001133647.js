@@ -26,14 +26,14 @@ export const projectsData = [
         "Asesoría tecnológica continua y formación al personal en nuevas herramientas."
       ]
     },
-   
+    // ===== NUEVA SECCIÓN AÑADIDA =====
     results: [
         {
             metric: "30%",
             description: "Reducción estimada del tiempo dedicado a tareas administrativas."
         },
         {
-            //metric: "100%",
+            metric: "100%",
             description: "Digitalización del flujo de trabajo clínico, eliminando el papel."
         },
         {

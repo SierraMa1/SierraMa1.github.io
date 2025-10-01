@@ -29,7 +29,7 @@ export const projectsData = [
    
     results: [
         {
-            metric: "30%",
+            //metric: "30%",
             description: "Reducción estimada del tiempo dedicado a tareas administrativas."
         },
         {

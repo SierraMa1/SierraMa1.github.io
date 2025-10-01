@@ -7,12 +7,12 @@ export const projectsData = [
     id: 1,
     title: "Clínica Casasnovas",
     description: "Solución Web completa para clínica dental con sistema de citas y gestión de pacientes.",
-    image: "/Clinica.jpg", 
+    image: "/Clinica.jpg", // Revisa que esta sea la ruta correcta a tu imagen
     github: "https://github.com/SierraMa1/ClinicaCasasnovas",
     demo: "https://www.clinicacasasnovas.com/",
     technologies: ["Vue.js", "Tailwind CSS", "Node.js", "Express.js", "Consultoría"],
     icon: "Stethoscope",
-  
+    // Tu información detallada:
     detailedDescription: {
       contexto: "Diseñé y desarrollé la nueva identidad digital de la clínica desde cero para modernizar su presencia online y optimizar la captación de nuevos pacientes, proveyendo una solución tecnológica integral 'llave en mano'.",
       retos: [
@@ -26,14 +26,14 @@ export const projectsData = [
         "Asesoría tecnológica continua y formación al personal en nuevas herramientas."
       ]
     },
-   
+    // ===== NUEVA SECCIÓN AÑADIDA =====
     results: [
         {
             metric: "30%",
             description: "Reducción estimada del tiempo dedicado a tareas administrativas."
         },
         {
-            //metric: "100%",
+            metric: "100%",
             description: "Digitalización del flujo de trabajo clínico, eliminando el papel."
         },
         {

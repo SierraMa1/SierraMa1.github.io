@@ -10,8 +10,7 @@ export const metadata = {
     default: 'Consultoría Digital y Desarrollo Web a Medida', 
   },
   description: 'Transformación digital real para PYMES, desde la estrategia hasta la implementación técnica con React y Node.js.',
-};
-
+},
 export default function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
