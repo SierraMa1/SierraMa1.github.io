@@ -32,7 +32,7 @@ function getProjectById(id) {
 }
 
 // El componente DEBE ser 'async' para poder usar 'await'
-export default async function ProjectPage({ params }: { params: { id: string } }) {
+export default async function ProjectPage({ params }) {
   //  Resolvemos la promesa de 'params' antes de usarla.
   const resolvedParams = await params;
   
