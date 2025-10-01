@@ -1,3 +1,4 @@
+// src/app/projects/[id]/page.tsx
 
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';

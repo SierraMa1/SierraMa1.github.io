@@ -1,9 +1,10 @@
+// src/app/projects/[id]/page.tsx
 
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 
-//  Definimos un tipo robusto para los props de la página.
+// 1. Definimos un tipo robusto para los props de la página.
 type Props = {
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
