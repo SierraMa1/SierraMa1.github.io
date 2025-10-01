@@ -36,10 +36,10 @@ function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+// Usamos el mismo tipo 'Props' también aquí.
+export default function ProjectPage({ params }: Props) {
   const { id } = params;
   const project = getProjectById(id);
-
 
   return <ProjectDetailsClient project={project} />;
 }
