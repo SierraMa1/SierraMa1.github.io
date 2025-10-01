@@ -26,7 +26,7 @@ export const projectsData = [
     image: "/electricfinder.jpeg",
     technologies: ["React.js", "MySQL", "Tailwind CSS", "Node.js", "Express", "Docker"],
     github: "https://github.com/SierraMa1/ProyectoCFGS/",
-    demo: "https://electricfinder.es",
+    demo: "https://electricfinder-example.com",
     icon: Lightbulb,
     detailedDescription: {
       contexto: "Creación de un marketplace digital desde cero para conectar a usuarios con electricistas cualificados, simplificando el proceso de búsqueda, evaluación y obtención de presupuestos.",

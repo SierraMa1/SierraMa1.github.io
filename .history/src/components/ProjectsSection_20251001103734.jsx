@@ -2,7 +2,7 @@
 
 import { useState } from 'react'; // <-- 1. IMPORTAMOS useState
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow } from 'swiper/modules';
+//import { Navigation, EffectCoverflow } from 'swiper/modules';
 import { projectsData } from '@/data/projects';
 import Link from 'next/link';
 import ProjectCarouselCard from './ProjectCarouselCard';
