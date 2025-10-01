@@ -36,7 +36,7 @@ function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-export default function ProjectPage({ params }: any) {
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const { id } = params;
   const project = getProjectById(id);
 
