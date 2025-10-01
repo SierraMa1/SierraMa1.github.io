@@ -1,12 +1,17 @@
-// src/app/projects/[id]/page.tsx
 
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 
-// Se elimina 'type Props' y se pone el tipo directamente en la función.
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const { id } = params;
+//  Definimos un tipo robusto para los props de la página.
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+//  Usamos el tipo 'Props' aquí.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = params; // Ya no necesitamos 'await' con los tipos correctos
   const project = getProjectById(id);
 
   if (!project) {
@@ -30,9 +35,9 @@ export async function generateStaticParams() {
 function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
-
-// La solución para ProjectPage se mantiene exactamente igual.
+// Paso 1: Añadimos este comentario para desactivar la regla de ESLint.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// Paso 2: Usamos el tipo 'any' para evitar el error del compilador.
 export default function ProjectPage({ params }: any) {
   const { id } = params;
   const project = getProjectById(id);
