@@ -1,10 +1,34 @@
-// src/app/projects/[id]/ProjectDetailsClient.jsx
+// src/app/projects/[id]/ProjectDetailsClient.tsx
 "use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const ProjectDetailsClient = ({ project }) => {
+// ===================================================
+// 1. DEFINE EL TIPO DE TU OBJETO PROJECT
+// (Ajusta esto si faltan o sobran propiedades)
+// ===================================================
+type Project = {
+  id: number;
+  title: string;
+  image: string;
+  shortDescription: string;
+  detailedDescription: {
+    contexto: string;
+    retos: string[];
+    soluciones: string[];
+  };
+  results: {
+    metric: string;
+    description: string;
+  }[];
+  technologies: string[];
+};
+
+// ===================================================
+// 2. APLICA EL TIPO A TUS PROPS
+// ===================================================
+const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => {
   if (!project) {
     return <div>Proyecto no encontrado.</div>;
   }
