@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Transformación digital real para PYMES, desde la estrategia hasta la implementación técnica con React y Node.js.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode })  {
+export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
       <body className="flex flex-col min-h-screen bg-white">
