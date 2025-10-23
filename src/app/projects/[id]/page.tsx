@@ -27,7 +27,7 @@ type PageProps = {
 }*/
 
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projectsData.map((project) => ({
     id: project.id.toString(),
   }));
