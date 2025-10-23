@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 
-// 1. Define el tipo de los parámetros para reutilizarlo
+// 1. Define el tipo
 type PageParams = {
   id: string;
 };
 
-// 2. AÑADE EL TIPO a 'params' aquí
+// 2. Esta SÍ es 'async'
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const { id } = params;
   const project = getProjectById(id);
@@ -26,21 +26,20 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   };
 }
 
-// 3. ASEGÚRATE de que 'async' no está aquí (como ya hiciste)
+// 3. Esta NO es 'async' (como ya lo tenías)
 export function generateStaticParams() {
   return projectsData.map((project) => ({
     id: project.id.toString(),
   }));
 }
 
-// 4. AÑADE EL TIPO 'string' al 'id'
+// 4. Tipo explícito
 function getProjectById(id: string) {
-  // parseInt() es correcto porque tus IDs en projectsData son números
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-// 5. AÑADE EL TIPO a 'params' en el componente de la página
-export default async function ProjectPage({ params }: { params: PageParams }) {
+// 5. Esta NO es 'async' (AQUÍ ESTÁ EL CAMBIO)
+export default function ProjectPage({ params }: { params: PageParams }) {
   const { id } = params;
   const project = getProjectById(id);
 
