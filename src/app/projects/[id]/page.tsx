@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
 
   return {
     title: `Caso de Estudio: ${project.title}`,
-    description: project.shortDescription,
+    description: project.description,
   };
 }
 

@@ -12,7 +12,7 @@ type Project = {
   id: number;
   title: string;
   image: string;
-  shortDescription: string;
+  description: string;
   detailedDescription: {
     contexto: string;
     retos: string[];
