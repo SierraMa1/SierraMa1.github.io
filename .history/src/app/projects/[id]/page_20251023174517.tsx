@@ -23,8 +23,8 @@ type PageProps = {
   return {
     title: `Caso de Estudio: ${project.title}`,
     description: project.shortDescription,
-  };
-}*/
+  };*/
+}
 
 
 export async function generateStaticParams() {

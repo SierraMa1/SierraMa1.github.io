@@ -1,16 +1,12 @@
 // src/app/projects/[id]/page.tsx
+
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 import { notFound } from 'next/navigation';
 
-
-type PageProps = {
-  params: { id: string };
-  // searchParams?: { [key: string]: string | string[] | undefined }; // Descomenta si usas searchParams
-};
-
-/*export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+// Se elimina 'type Props' y se pone el tipo directamente en la función.
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const { id } = params;
   const project = getProjectById(id);
 
@@ -24,8 +20,7 @@ type PageProps = {
     title: `Caso de Estudio: ${project.title}`,
     description: project.shortDescription,
   };
-}*/
-
+}
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -37,13 +32,22 @@ function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-export default function ProjectPage({ params }: PageProps) {
+// Define el tipo de props que Next.js te va a pasar
+type Props = {
+  params: { id: string };
+};
+
+//  tipo 'Props' en lugar de 'any'
+export default function ProjectPage({ params }: Props) {
   const { id } = params;
   const project = getProjectById(id);
 
+  // Comprueba si el proyecto existe
   if (!project) {
+    // Si no existe, muestra la página 404 de Next.js
     notFound();
   }
 
+  // Si llegamos aquí, 'project' existe y se lo pasamos al cliente
   return <ProjectDetailsClient project={project} />;
 }

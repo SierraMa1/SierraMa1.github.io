@@ -1,4 +1,5 @@
 // src/app/projects/[id]/page.tsx
+
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
@@ -10,7 +11,7 @@ type PageProps = {
   // searchParams?: { [key: string]: string | string[] | undefined }; // Descomenta si usas searchParams
 };
 
-/*export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const { id } = params;
   const project = getProjectById(id);
 
@@ -24,7 +25,7 @@ type PageProps = {
     title: `Caso de Estudio: ${project.title}`,
     description: project.shortDescription,
   };
-}*/
+}
 
 
 export async function generateStaticParams() {

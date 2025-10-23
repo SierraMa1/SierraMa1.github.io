@@ -1,16 +1,11 @@
 // src/app/projects/[id]/page.tsx
+
 import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
-import { notFound } from 'next/navigation';
 
-
-type PageProps = {
-  params: { id: string };
-  // searchParams?: { [key: string]: string | string[] | undefined }; // Descomenta si usas searchParams
-};
-
-/*export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+// Se elimina 'type Props' y se pone el tipo directamente en la función.
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const { id } = params;
   const project = getProjectById(id);
 
@@ -24,8 +19,7 @@ type PageProps = {
     title: `Caso de Estudio: ${project.title}`,
     description: project.shortDescription,
   };
-}*/
-
+}
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -37,13 +31,11 @@ function getProjectById(id: string) {
   return projectsData.find((project) => project.id === parseInt(id));
 }
 
-export default function ProjectPage({ params }: PageProps) {
+// La solución para ProjectPage se mantiene exactamente igual.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ProjectPage({ params }: any) {
   const { id } = params;
   const project = getProjectById(id);
-
-  if (!project) {
-    notFound();
-  }
 
   return <ProjectDetailsClient project={project} />;
 }
