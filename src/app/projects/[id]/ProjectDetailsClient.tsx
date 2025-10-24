@@ -18,8 +18,8 @@ type Project = {
     retos: string[];
     soluciones: string[];
   };
-  results: {
-    metric: string;
+  results?: {
+    metric?: string;
     description: string;
   }[];
   technologies: string[];
@@ -61,14 +61,16 @@ const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => 
 
         {/* Sección de Resultados Clave */}
         {results && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
             {results.map((result, index) => (
-                <div key={index} className="bg-gray-800 p-6 rounded-lg">
-                <p className="text-5xl font-bold text-blue-400 mb-2">{result.metric}</p>
+              <div key={index} className="bg-gray-800 p-6 rounded-lg">
+                {result.metric ? (
+                  <p className="text-5xl font-bold text-blue-400 mb-2">{result.metric}</p>
+                ) : null}
                 <p className="text-gray-300">{result.description}</p>
-                </div>
+              </div>
             ))}
-            </div>
+          </div>
         )}
 
         {/* Detalle del Caso de Éxito */}
