@@ -19,7 +19,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="text-center md:text-left mt-8 md:mt-0">
+          <div className="text-center md:text-left">
             <h2 className="mb-4 text-4xl font-bold text-gray-900">
               Hola, soy María
             </h2>

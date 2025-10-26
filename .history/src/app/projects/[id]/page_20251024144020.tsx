@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { projectsData } from '@/data/projects';
 import ProjectDetailsClient from './ProjectDetailsClient';
 
-
+// 1. Este tipo es correcto
 type PageParams = {
   id: string;
 };
