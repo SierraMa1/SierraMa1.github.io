@@ -3,12 +3,12 @@ import fs from 'fs';
 import path from 'path';
 
 // --- FUNCIÓN DE RETRASO ---
-// La usamos para el mensaje temporal
+// mensaje temporal
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// --- 1. CARGAMOS TU BASE DE CONOCIMIENTO (RAG) ---
+// --- TU BASE DE CONOCIMIENTO (RAG) ---
 // Esto se usa solo para Ollama en modo local
 let miInfo = '';
 let systemPrompt = '';

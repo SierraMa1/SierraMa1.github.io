@@ -3,13 +3,13 @@ import fs from 'fs';
 import path from 'path';
 
 // --- FUNCIÓN DE RETRASO ---
-// La usamos para el mensaje temporal
+// mensaje temporal
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// --- 1. CARGAMOS TU BASE DE CONOCIMIENTO (RAG) ---
-// Esto se usa solo para Ollama en modo local
+// --- TU BASE DE CONOCIMIENTO (RAG) ---
+// Esto solo para Ollama en modo local
 let miInfo = '';
 let systemPrompt = '';
 try {
@@ -39,13 +39,13 @@ try {
 
 export async function POST(req) {
 
-  // --- 2. LÓGICA DE PRODUCCIÓN (IONOS) ---
+  // --- LÓGICA DE PRODUCCIÓN (IONOS) ---
   // Comprueba si el entorno es 'production' (como en Ionos)
   if (process.env.NODE_ENV === 'production') {
-    // 1. Simula un pequeño tiempo de "pensamiento"
+    // Simula un pequeño tiempo de "pensamiento"
     await sleep(500);
 
-    // 2. Define el mensaje de "en construcción"
+    // Define el mensaje de "en construcción"
     const placeholderMessage = "Hola, gracias por tu interés. Este asistente de IA aún se está preparando y estará disponible muy pronto.";
 
     // 3. Responde siempre con ese mensaje

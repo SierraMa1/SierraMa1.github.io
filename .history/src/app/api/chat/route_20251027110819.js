@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // --- FUNCIÓN DE RETRASO ---
-// La usamos para el mensaje temporal
+// mensaje temporal
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
