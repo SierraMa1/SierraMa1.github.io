@@ -6,27 +6,27 @@ import { projectsData } from '@/data/projects';
 import Link from 'next/link';
 import { ArrowRight, Code, Database, Layout } from 'lucide-react';
 
-// Habilidades y los "tags" de proyecto 
+// Habilidades y los "tags" de proyecto que activan
 const skills = [
   { 
     name: 'Frontend', 
     icon: <Layout size={20} />,
-    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de  proyectos
+    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de tus proyectos
   },
   { 
     name: 'Backend', 
     icon: <Code size={20} />,
-    projects: ['Node.js', 'API', 'TypeScript'] // Tags de proyectos
+    projects: ['Node.js', 'API', 'TypeScript'] // Tags de tus proyectos
   },
   { 
     name: 'Datos y Estrategia', 
     icon: <Database size={20} />,
-    projects: ['Consultoría', 'Estrategia', 'Negocio', 'Optimización'] // Tags de proyectos
+    projects: ['Consultoría', 'Estrategia', 'Negocio', 'Optimización'] // Tags de tus proyectos
   },
 ];
 
 // --- Sub-componente para la tarjeta de proyecto ---
-// Usamos 'any' ya que no tenemos el tipo Project
+// CAMBIO: Usamos 'any' ya que no tenemos el tipo Project
 function ProjectLinkCard({ project }: { project: any }) {
   return (
     <Link 

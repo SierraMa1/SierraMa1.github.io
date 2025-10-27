@@ -6,12 +6,12 @@ import { projectsData } from '@/data/projects';
 import Link from 'next/link';
 import { ArrowRight, Code, Database, Layout } from 'lucide-react';
 
-// Habilidades y los "tags" de proyecto 
+// Habilidades y los "tags" de proyecto que activan
 const skills = [
   { 
     name: 'Frontend', 
     icon: <Layout size={20} />,
-    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de  proyectos
+    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de tus proyectos
   },
   { 
     name: 'Backend', 
