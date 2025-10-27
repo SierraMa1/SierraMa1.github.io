@@ -9,6 +9,6 @@ export async function GET() {
     emoji: "🚀"
   };
 
-  // Devuelvo el mensaje como un JSON
+  // Devolvemos el mensaje como un JSON
   return NextResponse.json(data);
 }

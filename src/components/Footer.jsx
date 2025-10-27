@@ -37,15 +37,15 @@ export default function Footer() {
   return (
     <footer id="contacto" className="relative w-full border-t border-gray-700">
       
-      {/* --- Fondo con imagen  --- */}
+      {/* --- Fondo con imagen (CORREGIDO) --- */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/footer-bg1.png" 
           alt="Fondo del footer"
-          fill // Reemplaza a layout="fill"
-          className="object-cover" // Reemplaza a objectFit="cover"
-          //  'quality={80}' HA SIDO ELIMINADO PARA QUITAR EL WARNING
-          sizes="100vw" //  Añadido para optimización con 'fill'
+          fill // 1. Reemplaza a layout="fill"
+          className="object-cover" // 2. Reemplaza a objectFit="cover"
+          // 3. 'quality={80}' HA SIDO ELIMINADO PARA QUITAR EL WARNING
+          sizes="100vw" // 4. Añadido para optimización con 'fill'
         />
         {/* Capa oscura para mejorar el contraste del texto */}
         <div className="absolute inset-0 bg-black opacity-60"></div>

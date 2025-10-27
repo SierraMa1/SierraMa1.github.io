@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, FormEvent, useEffect } from 'react';
-// 1. Importo la librería para el previsualizador de Markdown
+// 1. Importamos la librería para el previsualizador de Markdown
 import ReactMarkdown from 'react-markdown';
 
 // --- Juguete 1: To-Do List (El que ya teníamos) ---
@@ -203,14 +203,14 @@ console.log("¡Funciona!");
 // --- El componente principal de la SECCIÓN ---
 export default function PlaygroundSection() {
 
-  // ---  HUEVO DE PASCUA ---
+  // --- NUEVO HUEVO DE PASCUA ---
   // Este código se ejecutará solo una vez cuando el componente se cargue en el navegador.
   useEffect(() => {
     const message = "¡Hola, developer! 👋 ¿Curios@ por ver cómo está hecho esto? Si encuentras el secreto en /api/secreto, ¡menciónalo en la entrevista!";
     const styles = "color: #0ea5e9; font-size: 1.2rem; font-weight: bold; background: #f0f9ff; padding: 10px; border-radius: 8px;";
     
     console.log("%c" + message, styles);
-  }, []); // El array vacío []  solo se ejecute una vez.
+  }, []); // El array vacío [] asegura que esto solo se ejecute una vez.
   // --- FIN DEL HUEVO DE PASCUA ---
 
   return (
