@@ -11,6 +11,7 @@ export const projectsData = [
     github: "https://github.com/SierraMa1/ClinicaCasasnovas",
     demo: "https://www.clinicacasasnovas.com/",
     technologies: ["Vue.js", "Tailwind CSS", "Node.js", "Express.js", "Consultoría"],
+    // --- TAGS AÑADIDOS ---
     tags: ["Frontend", "Vue.js", "Tailwind", "Backend", "Node.js", "Express.js", "Consultoría", "Estrategia"],
     icon: "Stethoscope",
   

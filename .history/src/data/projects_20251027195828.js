@@ -11,6 +11,7 @@ export const projectsData = [
     github: "https://github.com/SierraMa1/ClinicaCasasnovas",
     demo: "https://www.clinicacasasnovas.com/",
     technologies: ["Vue.js", "Tailwind CSS", "Node.js", "Express.js", "Consultoría"],
+    // --- TAGS AÑADIDOS ---
     tags: ["Frontend", "Vue.js", "Tailwind", "Backend", "Node.js", "Express.js", "Consultoría", "Estrategia"],
     icon: "Stethoscope",
   
@@ -49,6 +50,7 @@ export const projectsData = [
     description: "Plataforma Web para conectar usuarios con electricistas, con acceso fácil y transparente.",
     image: "/electricfinder.jpeg",
     technologies: ["React.js", "MySQL", "Tailwind CSS", "Node.js", "Express", "Docker"],
+    // --- TAGS AÑADIDOS ---
     tags: ["Frontend", "React", "Tailwind", "Backend", "Node.js", "API", "MySQL"],
     github: "https://github.com/SierraMa1/ProyectoCFGS/",
     demo: "https://electricfinder.es",
@@ -67,6 +69,7 @@ export const projectsData = [
     github: "private",
     demo: "private",
     technologies: ["Estrategia Digital", "IA", "Roadmap Técnico", "Cultura Organizacional"],
+    // --- TAGS AÑADIDOS ---
     tags: ["Datos y Estrategia", "Consultoría", "Estrategia", "Optimización", "IA"],
     icon: "BrainCircuit", //  Usar el nombre como texto (string)
     detailedDescription: {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'; // AÑADIDO: useEffect
+import { useState } from 'react'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow } from 'swiper/modules';
 import { projectsData } from '@/data/projects';
@@ -51,17 +51,6 @@ export default function ProjectsSection({ searchTerm }: ProjectsSectionProps) {
 
     return titleMatch || descriptionMatch || tagsMatch;
   });
-
-  // --- SOLUCIÓN: FORZAR LA ACTUALIZACIÓN DE SWIPER ---
-  useEffect(() => {
-    if (swiperInstance && filteredProjects.length > 0) {
-      // 1. Actualiza el estado de Swiper con los nuevos slides
-      swiperInstance.update();
-      // 2. Asegúrate de empezar en el primer slide
-      swiperInstance.slideTo(0);
-    }
-  }, [filteredProjects.length, swiperInstance]); // Depende de la cantidad de proyectos filtrados
-  // ----------------------------------------------------
 
 
   return (
