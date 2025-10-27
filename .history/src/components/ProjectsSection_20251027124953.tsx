@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'; 
+// Ya no necesitamos la importación de SwiperClass, la hemos quitado.
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow } from 'swiper/modules';
 import { projectsData } from '@/data/projects';
@@ -13,10 +14,10 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 export default function ProjectsSection() {
-  // Uso 'any' para evitar el error de tipos de Swiper
+  // 1. CORREGIDO: Usamos 'any' para evitar el error de tipos de Swiper
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
-  // FUNCIONES PARA CONTROLAR EL CARRUSEL MANUALMENTE
+  // CREAMOS FUNCIONES PARA CONTROLAR EL CARRUSEL MANUALMENTE
   const handlePrev = () => {
     if (swiperInstance) swiperInstance.slidePrev();
   };
@@ -48,12 +49,12 @@ export default function ProjectsSection() {
 
           <div className="lg:w-2/3">
             <Swiper
-              // Añado el tipo 'any' al argumento
+              // 2. CORREGIDO: Añadimos el tipo 'any' al argumento
               onSwiper={(swiper: any) => setSwiperInstance(swiper)}
               modules={[EffectCoverflow]} 
               effect={'coverflow'}
               centeredSlides={true}
-              loop={false} // Mantengo esto en 'false'
+              loop={false} // Mantenemos esto en 'false'
               slidesPerView={'auto'}
               coverflowEffect={{
                 rotate: 50,
@@ -71,7 +72,7 @@ export default function ProjectsSection() {
               ))}
             </Swiper>
 
-            {/* AÑADO onClick A LOS BOTONES PARA LLAMAR A NUESTRAS FUNCIONES */}
+            {/* AÑADo onClick A LOS BOTONES PARA LLAMAR A NUESTRAS FUNCIONES */}
             <div className="mt-8 flex justify-center gap-4">
               <button onClick={handlePrev} className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition hover:bg-gray-100">
                 <ArrowLeft size={24} />

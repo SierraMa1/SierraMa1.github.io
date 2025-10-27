@@ -40,7 +40,7 @@ const services = [
   }
 ];
 
-// El componente principal
+// El componente principal que exportaremos
 const Solutions = () => {
   return (
     <section id="solutions" className="py-20 bg-gray-50 sm:py-24">

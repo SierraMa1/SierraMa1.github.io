@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-// DEFINO EL TIPO 'PROJECT' (BUENA PRÁCTICA)
+// 1. DEFINIMOS EL TIPO 'PROJECT' (BUENA PRÁCTICA)
 // Asegúrate de que este tipo coincida con tu 'projectsData'
 interface Project {
   id: number | string;
@@ -11,7 +11,7 @@ interface Project {
   description: string;
 }
 
-// APLICO EL TIPO A LAS PROPS
+// 2. APLICAMOS EL TIPO A LAS PROPS
 export default function ProjectCarouselCard({ project }: { project: Project }) {
   return (
     <Link 
@@ -23,7 +23,7 @@ export default function ProjectCarouselCard({ project }: { project: Project }) {
         src={project.image}
         alt={`Imagen del proyecto ${project.title}`}
         fill
-        // Añado la propiedad 'sizes'
+        // Añadimos la propiedad 'sizes'
         // Esto le dice a Next.js:
         // - En pantallas de hasta 767px, la imagen ocupa 256px de ancho.
         // - En pantallas de 768px o más, ocupa 288px de ancho.

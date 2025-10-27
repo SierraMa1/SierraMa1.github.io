@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'; 
+// Ya no necesitamos la importación de SwiperClass, la hemos quitado.
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow } from 'swiper/modules';
 import { projectsData } from '@/data/projects';
@@ -13,7 +14,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 export default function ProjectsSection() {
-  // Uso 'any' para evitar el error de tipos de Swiper
+  // Usamos 'any' para evitar el error de tipos de Swiper
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   // FUNCIONES PARA CONTROLAR EL CARRUSEL MANUALMENTE

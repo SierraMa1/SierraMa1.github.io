@@ -21,13 +21,15 @@ type Project = {
   technologies: string[];
 };
 
-// 2. APLICA EL TIPO A  PROPS
+// ===================================================
+// 2. APLICA EL TIPO A TUS PROPS
+// ===================================================
 const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => {
   if (!project) {
     return <div>Proyecto no encontrado.</div>;
   }
 
-  // Extrae la data de tu estructura
+  // Extraemos la data de tu estructura
   const { detailedDescription, results, technologies } = project;
 
   return (

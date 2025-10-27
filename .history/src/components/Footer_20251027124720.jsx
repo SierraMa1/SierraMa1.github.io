@@ -42,7 +42,7 @@ export default function Footer() {
         <Image
           src="/footer-bg1.png" 
           alt="Fondo del footer"
-          fill // Reemplaza a layout="fill"
+          fill // 1. Reemplaza a layout="fill"
           className="object-cover" // Reemplaza a objectFit="cover"
           //  'quality={80}' HA SIDO ELIMINADO PARA QUITAR EL WARNING
           sizes="100vw" //  Añadido para optimización con 'fill'

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-// Importo todos los iconos que vamos a necesitar
+
 import { Stethoscope, Lightbulb, BrainCircuit, Target, ArrowRight } from 'lucide-react';
 
 // Mapa para asociar el texto con el componente del icono

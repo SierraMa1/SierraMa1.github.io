@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'; 
+// Ya no necesitamos la importación de SwiperClass, la hemos quitado.
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow } from 'swiper/modules';
 import { projectsData } from '@/data/projects';

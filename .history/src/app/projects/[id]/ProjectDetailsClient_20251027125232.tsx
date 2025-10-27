@@ -27,7 +27,7 @@ const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => 
     return <div>Proyecto no encontrado.</div>;
   }
 
-  // Extrae la data de tu estructura
+  // Extraemos la data de tu estructura
   const { detailedDescription, results, technologies } = project;
 
   return (

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 // Pequeños componentes para los iconos para mantener el código principal limpio
@@ -21,7 +22,7 @@ const CodeIcon = () => (
 );
 
 
-// Defino los datos de las tarjetas de servicios
+// Definimos los datos de las tarjetas de servicios
 const services = [
   {
     icon: <StrategyIcon />,
@@ -40,7 +41,7 @@ const services = [
   }
 ];
 
-// El componente principal
+// El componente principal que exportaremos
 const Solutions = () => {
   return (
     <section id="solutions" className="py-20 bg-gray-50 sm:py-24">

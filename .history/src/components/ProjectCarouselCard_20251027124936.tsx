@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-// DEFINO EL TIPO 'PROJECT' (BUENA PRÁCTICA)
+// 1. DEFINO EL TIPO 'PROJECT' (BUENA PRÁCTICA)
 // Asegúrate de que este tipo coincida con tu 'projectsData'
 interface Project {
   id: number | string;
