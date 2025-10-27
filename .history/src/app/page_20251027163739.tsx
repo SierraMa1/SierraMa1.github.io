@@ -4,7 +4,8 @@ import AboutSection from '@/components/AboutSection';
 import Solutions from '@/components/Solutions';
 import PlaygroundSection from '@/components/PlaygroundSection'; 
 import SkillSection from '@/components/SkillSection'; 
-import BlogSection from '@/components/BlogSection'; 
+import BlogSection from '@/components/BlogSection'; // <-- AÑADIDO
+
 export default function Home() {
   return (
     <>
@@ -14,7 +15,7 @@ export default function Home() {
       <ProjectsSection />
       <SkillSection /> 
       <PlaygroundSection /> 
-      <BlogSection /> 
+      <BlogSection /> {/* <-- AÑADIDO */}
     </>
   );
 }

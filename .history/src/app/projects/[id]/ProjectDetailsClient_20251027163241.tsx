@@ -4,6 +4,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// ===================================================
+// 1. DEFINE EL TIPO DE TU OBJETO PROJECT
+// (Ajusta esto si faltan o sobran propiedades)
+// ===================================================
 type Project = {
   id: number;
   title: string;
@@ -21,7 +25,9 @@ type Project = {
   technologies: string[];
 };
 
-
+// ===================================================
+// 2. APLICA EL TIPO A TUS PROPS
+// ===================================================
 const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => {
   if (!project) {
     return <div>Proyecto no encontrado.</div>;
@@ -106,7 +112,7 @@ const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => 
               className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
               >
             Contactar Ahora
-          </Link>
+</Link>
           </div>
         </div>
 

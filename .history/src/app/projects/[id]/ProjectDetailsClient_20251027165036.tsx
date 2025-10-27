@@ -21,7 +21,9 @@ type Project = {
   technologies: string[];
 };
 
-
+// ===================================================
+// 2. APLICA EL TIPO A TUS PROPS
+// ===================================================
 const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => {
   if (!project) {
     return <div>Proyecto no encontrado.</div>;

@@ -1,10 +1,11 @@
+//* app/page.tsx
 import Hero from '@/components/Hero';
 import ProjectsSection from '@/components/ProjectsSection';
 import AboutSection from '@/components/AboutSection';
 import Solutions from '@/components/Solutions';
 import PlaygroundSection from '@/components/PlaygroundSection'; 
 import SkillSection from '@/components/SkillSection'; 
-import BlogSection from '@/components/BlogSection'; 
+
 export default function Home() {
   return (
     <>
@@ -14,7 +15,6 @@ export default function Home() {
       <ProjectsSection />
       <SkillSection /> 
       <PlaygroundSection /> 
-      <BlogSection /> 
     </>
   );
 }
