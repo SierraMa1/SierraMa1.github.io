@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+// Importamos SÓLO 'projectsData', que sí existe
 import { projectsData } from '@/data/projects'; 
 import Link from 'next/link';
 import { ArrowRight, Code, Database, Layout } from 'lucide-react';
@@ -10,22 +11,22 @@ const skills = [
   { 
     name: 'Frontend', 
     icon: <Layout size={20} />,
-    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de proyectos
+    projects: ['React', 'Next.js', 'Tailwind', 'Swiper'] // Tags de tus proyectos
   },
   { 
     name: 'Backend', 
     icon: <Code size={20} />,
-    projects: ['Node.js', 'API', 'TypeScript'] // Tags de proyectos
+    projects: ['Node.js', 'API', 'TypeScript'] // Tags de tus proyectos
   },
   { 
     name: 'Datos y Estrategia', 
     icon: <Database size={20} />,
-    projects: ['Consultoría', 'Estrategia', 'Negocio', 'Optimización'] // Tags de proyectos
+    projects: ['Consultoría', 'Estrategia', 'Negocio', 'Optimización'] // Tags de tus proyectos
   },
 ];
 
 // --- Sub-componente para la tarjeta de proyecto ---
-//  Uso 'any' ya que no tengo el tipo Project
+// CAMBIO:o Usamos 'any' ya que no tenemos el tipo Project
 function ProjectLinkCard({ project }: { project: any }) {
   return (
     <Link 

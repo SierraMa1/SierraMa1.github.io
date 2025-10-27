@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+//  SÓLO 'projectsData', que sí existe
 import { projectsData } from '@/data/projects'; 
 import Link from 'next/link';
 import { ArrowRight, Code, Database, Layout } from 'lucide-react';
