@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
+
+// --- ESTA LÍNEA ES LA SOLUCIÓN ---
 // Le dice a Next.js que "convierta" esta API en un archivo estático durante el build
 export const dynamic = 'force-static';
+// ----------------------------------
 
 // Esta función se ejecutará cuando alguien visite /api/secreto
 export async function GET() {
@@ -12,11 +15,11 @@ export async function GET() {
       emoji: "🚀"
     };
 
-    // Devuelvo el mensaje como un JSON
+    // Devolvemos el mensaje como un JSON
     return NextResponse.json(data);
 
   } catch (error) {
-    // un try...catch por si algo falla
+    // Es buena práctica mantener un try...catch por si algo falla
     return new NextResponse(
       JSON.stringify({ error: 'Error al procesar la solicitud' }),
       { status: 500 }

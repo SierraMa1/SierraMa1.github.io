@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 // Le dice a Next.js que "convierta" esta API en un archivo estático durante el build
 export const dynamic = 'force-static';
 
+
 // Esta función se ejecutará cuando alguien visite /api/secreto
 export async function GET() {
   
