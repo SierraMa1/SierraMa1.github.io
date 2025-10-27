@@ -44,8 +44,8 @@ export default function Footer() {
           alt="Fondo del footer"
           fill // 1. Reemplaza a layout="fill"
           className="object-cover" // 2. Reemplaza a objectFit="cover"
-          // 3. 'quality={80}' HA SIDO ELIMINADO PARA QUITAR EL WARNING
-          sizes="100vw" // 4. Añadido para optimización con 'fill'
+          quality={80}
+          sizes="100vw" // 3. Añadido para optimización con 'fill'
         />
         {/* Capa oscura para mejorar el contraste del texto */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -90,4 +90,3 @@ export default function Footer() {
     </footer>
   );
 }
-

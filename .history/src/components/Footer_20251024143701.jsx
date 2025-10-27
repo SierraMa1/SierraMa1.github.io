@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState, useEffect } from 'react';
@@ -16,36 +17,23 @@ export default function Footer() {
   }, []);
 
   const copyToClipboard = () => {
-    // Usamos document.execCommand('copy') para compatibilidad en iframes
-    try {
-      const ta = document.createElement('textarea');
-      ta.value = email;
-      ta.style.position = 'fixed'; // Evita que "salte" la pantalla
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-
+    navigator.clipboard.writeText(email).then(() => {
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
-    } catch (err) {
-      console.error('Error al copiar el email: ', err);
-    }
+    });
   };
 
   return (
     <footer id="contacto" className="relative w-full border-t border-gray-700">
       
-      {/* --- Fondo con imagen (CORREGIDO) --- */}
+      {/* --- Fondo con imagen --- */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/footer-bg1.png" 
           alt="Fondo del footer"
-          fill // 1. Reemplaza a layout="fill"
-          className="object-cover" // 2. Reemplaza a objectFit="cover"
-          // 3. 'quality={80}' HA SIDO ELIMINADO PARA QUITAR EL WARNING
-          sizes="100vw" // 4. Añadido para optimización con 'fill'
+          layout="fill"
+          objectFit="cover"
+          quality={80}
         />
         {/* Capa oscura para mejorar el contraste del texto */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -90,4 +78,3 @@ export default function Footer() {
     </footer>
   );
 }
-
