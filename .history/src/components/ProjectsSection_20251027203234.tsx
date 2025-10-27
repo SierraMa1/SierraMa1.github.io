@@ -49,7 +49,7 @@ export default function ProjectsSection() {
 
           <div className="lg:w-2/3">
             <Swiper
-              // Añadimos el tipo 'any' al argumento
+              // 2. CORREGIDO: Añadimos el tipo 'any' al argumento
               onSwiper={(swiper: any) => setSwiperInstance(swiper)}
               modules={[EffectCoverflow]} 
               effect={'coverflow'}

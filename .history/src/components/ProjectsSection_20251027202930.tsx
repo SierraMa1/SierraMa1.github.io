@@ -14,7 +14,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 export default function ProjectsSection() {
-  // Usamos 'any' para evitar el error de tipos de Swiper
+  // 1. CORREGIDO: Usamos 'any' para evitar el error de tipos de Swiper
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   // CREAMOS FUNCIONES PARA CONTROLAR EL CARRUSEL MANUALMENTE
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
 
           <div className="lg:w-2/3">
             <Swiper
-              // Añadimos el tipo 'any' al argumento
+              // 2. CORREGIDO: Añadimos el tipo 'any' al argumento
               onSwiper={(swiper: any) => setSwiperInstance(swiper)}
               modules={[EffectCoverflow]} 
               effect={'coverflow'}
