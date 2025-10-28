@@ -81,15 +81,6 @@ export default function Hero() {
             </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex h-full w-full flex-col items-center justify-center text-center text-white p-4 px-8 md:px-4">
-            <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">Código Eficiente. Procesos Automatizados. </h1>
-            <p className="mt-4 text-lg md:text-xl max-w-2xl drop-shadow-md">Materializo tus ideas en productos digitales funcionales y rentables. Creamos soluciones Full Stack desde la consultoría hasta la implementación final.</p>
-            <Link href="/#proyectos" className="mt-8 rounded-full bg-violet-600 px-8 py-3 text-lg font-semibold transition hover:bg-violet-700 shadow-lg">
-              Ver Proyectos
-            </Link>
-          </div>
-        </SwiperSlide>
       </Swiper>
     </section>
   );

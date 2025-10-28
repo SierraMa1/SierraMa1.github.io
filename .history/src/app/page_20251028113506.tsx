@@ -5,7 +5,6 @@ import Solutions from '@/components/Solutions';
 import PlaygroundSection from '@/components/PlaygroundSection'; 
 import SkillSection from '@/components/SkillSection'; 
 import BlogSection from '@/components/BlogSection'; 
-import ResourceHubSection from '@/components/ResourceHubSection';
 export default function Home() {
   return (
     <>
