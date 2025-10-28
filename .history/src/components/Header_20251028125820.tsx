@@ -3,17 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Search, Github, Linkedin } from 'lucide-react';
+// Asumo que tienes un archivo de utilidades para cn (className merge)
 import { cn } from "@/lib/utils"; 
 
-// 1. DEFINICIÓN DE LA INTERFAZ (EL TIPO)
-interface NavItemType {
-  href: string;
-  label: string;
-  isPrimary?: boolean; // Propiedad opcional para destacar
-}
-
-// Lista centralizada de enlaces de navegación (escritorio y móvil)
-const navItems: NavItemType[] = [
+// 1. Defina el nuevo elemento de navegación (Roadmap) y el array combinado
+const roadmapItem = { href: "/#recursos", label: "Encuentra tu Roadmap", isPrimary: true }; 
+const navItems = [
   { href: "/#sobre-mi", label: "Sobre Mí" },
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#habilidades", label: "Habilidades" },
@@ -21,13 +16,7 @@ const navItems: NavItemType[] = [
   { href: "/#blog", label: "Blog" },
 ];
 
-// Definimos el nuevo elemento con el tipo correcto
-const roadmapItem: NavItemType = { 
-    href: "/#recursos", 
-    label: "Encuentra tu Roadmap", 
-    isPrimary: true 
-}; 
-const updatedNavItems = [roadmapItem, ...navItems]; 
+const updatedNavItems = [roadmapItem, ...navItems]; // El Roadmap va primero
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,22 +41,18 @@ export default function Header() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
+      // Redirigimos a la página principal con el término de búsqueda en la URL
       window.location.href = `/?search=${encodeURIComponent(searchTerm.trim())}`;
     } else {
+        // Si el usuario borra la búsqueda y presiona enter, volvemos al inicio
         window.location.href = `/`;
     }
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false); // Cierra el menú móvil al buscar
   };
 
   if (!hasMounted) {
     return <header className="sticky top-0 z-50 w-full bg-white text-black h-[72px] border-b border-gray-200"></header>;
   }
-
-  // Clases base para los enlaces de navegación, aplicando el efecto al HOVER
-  const baseNavLinkClasses = "text-gray-700 transition-colors duration-200 hover:text-violet-600 hover:font-bold hover:border-b-2 hover:border-violet-600 pb-1";
-  // Clases para el enlace de inicio (si tiene un estilo ligeramente diferente)
-  const homeLinkClasses = "text-gray-700 transition-colors duration-200 hover:text-violet-600 hover:font-bold hover:border-b-2 hover:border-violet-600 pb-1";
-
 
   return (
     <header className={cn(
@@ -84,12 +69,17 @@ export default function Header() {
           {/* Menú de Navegación (Centrado - Escritorio) */}
           <nav className="hidden md:flex flex-grow justify-center">
             <ul className="flex items-center space-x-8">
-              <li><Link href="/" className={homeLinkClasses}>Inicio</Link></li>
+              <li><Link href="/" className="text-gray-700 hover:text-violet-600 transition-colors">Inicio</Link></li>
+              {/* Renderizamos los updatedNavItems */}
               {updatedNavItems.map((item) => (
                   <li key={item.href}>
                       <Link 
                           href={item.href} 
-                          className={baseNavLinkClasses} // Aplicamos las clases base
+                          className={cn(
+                            "text-gray-700 hover:text-violet-600 transition-colors",
+                            // Aplicamos estilo destacado al nuevo enlace
+                            item.isPrimary && "font-bold text-violet-600 border-b-2 border-violet-600"
+                          )}
                       >
                           {item.label}
                       </Link>
@@ -100,9 +90,11 @@ export default function Header() {
 
           {/* Iconos, Búsqueda y Contacto (Derecha) */}
           <div className="hidden md:flex items-center space-x-5">
+            {/* Redes Sociales */}
             <a href="https://github.com/SierraMa1" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-violet-600 transition-colors"><Github size={22} /></a>
             <a href="https://www.linkedin.com/in/Mar%C3%ADaSierraS%C3%A1nchez/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-violet-600 transition-colors"><Linkedin size={22} /></a>
             
+            {/* Buscador funcional */}
             <form onSubmit={handleSearch} className="relative">
               <input 
                 type="text" 
@@ -121,6 +113,7 @@ export default function Header() {
             </Link>
           </div>
           
+          {/* Botón del menú móvil */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-black" aria-label="Toggle menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -132,13 +125,16 @@ export default function Header() {
         <nav className="md:hidden bg-white p-4">
           <ul className="flex flex-col space-y-4">
             <li><Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-violet-600">Inicio</Link></li>
+            {/* Renderizamos los updatedNavItems para móvil */}
              {updatedNavItems.map((item) => (
                   <li key={item.href}>
                       <Link 
                           href={item.href} 
                           onClick={() => setIsMenuOpen(false)}
-                          // Clases para el menú móvil, sin subrayado permanente
-                          className="text-gray-700 hover:text-violet-600 hover:font-bold transition-colors" 
+                          className={cn(
+                            "hover:text-violet-600",
+                            item.isPrimary && "font-bold text-violet-600"
+                          )}
                       >
                           {item.label}
                       </Link>
@@ -148,6 +144,4 @@ export default function Header() {
           </ul>
         </nav>
       )}
-    </header>
-  );
-}
+    

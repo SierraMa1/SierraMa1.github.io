@@ -26,7 +26,8 @@ const ResourceHubSection: React.FC = () => {
     },
     { 
       title: "Otros Sectores & Proyectos Especiales", 
-      subtitle: "Consultoría de transformación digital para desafíos complejos, más allá de los nichos definidos.",      link: "/recursos/general", 
+      subtitle: "Su problema es de procesos. Aplique la visión Full Stack a cualquier industria.", 
+      link: "/recursos/general", 
       bgColor: "bg-yellow-100", 
       textColor: "text-yellow-800" 
     },

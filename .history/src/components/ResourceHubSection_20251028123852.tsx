@@ -26,7 +26,8 @@ const ResourceHubSection: React.FC = () => {
     },
     { 
       title: "Otros Sectores & Proyectos Especiales", 
-      subtitle: "Consultoría de transformación digital para desafíos complejos, más allá de los nichos definidos.",      link: "/recursos/general", 
+      subtitle: "Su problema es de procesos. Aplique la visión Full Stack a cualquier industria.", 
+      link: "/recursos/general", 
       bgColor: "bg-yellow-100", 
       textColor: "text-yellow-800" 
     },
@@ -42,7 +43,7 @@ const ResourceHubSection: React.FC = () => {
           Mi visión dual (negocio y tecnología) se aplica a tu sector.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {resources.map((resource, index) => (
             <Link key={index} href={resource.link} className={`block p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 ${resource.bgColor}`}>
                 <h3 className={`text-2xl font-bold mb-2 ${resource.textColor}`}>
