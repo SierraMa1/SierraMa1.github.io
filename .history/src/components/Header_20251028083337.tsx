@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 // Lista centralizada de enlaces de navegación (escritorio y móvil)
 const navItems = [
-  { href: "/#sobre-mi", label: "Sobre Mí" },
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#habilidades", label: "Habilidades" },
   { href: "/#playground", label: "Playground" },
