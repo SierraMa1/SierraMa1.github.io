@@ -1,6 +1,7 @@
 import React from 'react';
 import DirectBookingCTA from '@/components/DirectBookingCTA'; 
 
+
 // Contenido estático del checklist y el roadmap 
 const DENTAL_CHECKLIST = [
   "Migre los recordatorios de citas de llamadas a WhatsApp/Email automatizado.",

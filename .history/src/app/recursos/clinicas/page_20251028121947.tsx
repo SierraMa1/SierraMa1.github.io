@@ -1,5 +1,6 @@
 import React from 'react';
 import DirectBookingCTA from '@/components/DirectBookingCTA'; 
+// Asumiendo que sus estilos globales controlan el layout
 
 // Contenido estático del checklist y el roadmap 
 const DENTAL_CHECKLIST = [

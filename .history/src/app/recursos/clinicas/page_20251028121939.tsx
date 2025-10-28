@@ -1,7 +1,8 @@
 import React from 'react';
 import DirectBookingCTA from '@/components/DirectBookingCTA'; 
+// Asumiendo que sus estilos globales controlan el layout
 
-// Contenido estático del checklist y el roadmap 
+// Contenido estático del checklist y el roadmap conciso
 const DENTAL_CHECKLIST = [
   "Migre los recordatorios de citas de llamadas a WhatsApp/Email automatizado.",
   "Habilite la reserva y cancelación online con un sistema sincronizado.",

@@ -15,6 +15,7 @@ const AGRICULTURA_CHECKLIST = [
 
 const GOOGLE_CALENDAR_URL = "https://calendar.app.google/gwr2H7gugV3Kri3FA"; 
 
+
 const AgriculturaRoadmapPage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
