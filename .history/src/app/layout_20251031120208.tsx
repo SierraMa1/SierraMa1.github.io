@@ -16,7 +16,7 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
-      <GoogleTagManager gtmId="GTM-M757BHQP" />
+      <GoogleTagManager />
       <body className="flex flex-col min-h-screen bg-white">
         <Header />
         <main className="flex-grow">

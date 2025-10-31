@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot"; 
-import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata = {
   title: {
@@ -16,7 +15,7 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
-      <GoogleTagManager gtmId="GTM-M757BHQP" />
+      <GoogleTagManager />
       <body className="flex flex-col min-h-screen bg-white">
         <Header />
         <main className="flex-grow">
