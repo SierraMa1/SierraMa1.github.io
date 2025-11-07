@@ -79,8 +79,10 @@ export default function Chatbot() {
         {`window.botpressWebChat = ${JSON.stringify(botpressConfig)};`}
       </Script>
 
+      {/* Script de INYECCIÓN: Vuelve a usar HTTP y la IP del VPS */}
       <Script 
-        src={`https://electricfinder.es/botpress/assets/modules/channel-web/inject.js`}
+        // 🛑 ¡CLAVE! HTTP y la IP (BOTPRESS_IP) para DESARROLLO LOCAL
+        src={`http://${BOTPRESS_IP}:3000/assets/modules/channel-web/inject.js`} // CAMBIO AQUÍ
         strategy="afterInteractive" 
       />
 

@@ -73,13 +73,16 @@ export default function Chatbot() {
   
   return (
     <>
-      {/* Script de CONFIGURACIÓN (hostUrl seguro: https://electricfinder.es) */}
+      {/* SCRIPT DE CONFIGURACIÓN (sin cambios) */}
       <Script id="bp-config" strategy="beforeInteractive">
         {/* Usará hostUrl: https://electricfinder.es */}
         {`window.botpressWebChat = ${JSON.stringify(botpressConfig)};`}
       </Script>
 
+      {/* SCRIPT DE INYECCIÓN (Apunta a la ruta segura de Nginx) */}
       <Script 
+        // 🛑 ¡CORRECCIÓN AQUÍ!
+        // Debe usar HTTPS y el dominio, no la IP ni HTTP.
         src={`https://electricfinder.es/botpress/assets/modules/channel-web/inject.js`}
         strategy="afterInteractive" 
       />

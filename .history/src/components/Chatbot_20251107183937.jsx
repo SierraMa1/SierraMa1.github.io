@@ -73,15 +73,18 @@ export default function Chatbot() {
   
   return (
     <>
-      {/* Script de CONFIGURACIÓN (hostUrl seguro: https://electricfinder.es) */}
+      {/* 5. SCRIPTS DE INYECCIÓN */}
+      
+      {/* Script de CONFIGURACIÓN (Debe ir primero) */}
       <Script id="bp-config" strategy="beforeInteractive">
-        {/* Usará hostUrl: https://electricfinder.es */}
+        {/* Pasamos la configuración en formato JSON */}
         {`window.botpressWebChat = ${JSON.stringify(botpressConfig)};`}
       </Script>
 
+      {/* Script de INYECCIÓN (Apunta a la IP del VPS) */}
       <Script 
-        src={`https://electricfinder.es/botpress/assets/modules/channel-web/inject.js`}
-        strategy="afterInteractive" 
+        src={`http://${BOTPRESS_IP}:3000/assets/modules/channel-web/inject.js`}
+        strategy="afterInteractive" // Carga después de la interacción para mejor rendimiento
       />
 
       {/* 6. TU BOTÓN Y DISEÑO ORIGINAL */}
