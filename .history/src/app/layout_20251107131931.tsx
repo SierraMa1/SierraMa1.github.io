@@ -2,10 +2,22 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot"; 
 import { GoogleTagManager } from '@next/third-parties/google';
-import Script from 'next/script';
-import BotpressChat from "@/components/BotpressChat";
 
+export default function Chatbot() {
+  return (
+    <>
+      {/* El componente Script ya está disponible globalmente en el scope de Next.js.
+        Reemplaza 217.154.1.200 con tu IP pública REAL de IONOS.
+      */}
+      <Script 
+        src="http://217.154.1.200:3000/assets/modules/channel-web/inject.js" 
+        strategy="lazyOnload"
+      />
+    </>
+  );
+}
 
 export const metadata = {
   title: {
@@ -25,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <BotpressChat /> {}
+        <Chatbot /> {}
       </body>
     </html>
   );

@@ -2,11 +2,19 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot"; 
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
-import BotpressChat from "@/components/BotpressChat";
-
-
+export default function Chatbot() {
+  return (
+    <>
+      <Script 
+        src="http://217.154.1.200:3000/assets/modules/channel-web/inject.js" // ¡REEMPLAZA ESTA IP!
+        strategy="lazyOnload"
+      />
+    </>
+  );
+}
 export const metadata = {
   title: {
     template: '%s | María Sierra Sánchez', 
@@ -25,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <BotpressChat /> {}
+        <Chatbot /> {}
       </body>
     </html>
   );
