@@ -10,9 +10,10 @@ const BOTPRESS_BOT_ID = process.env.NEXT_PUBLIC_BOTPRESS_ID || "default-bot";
 
 // --- CONFIGURACIÓN DE BOTPRESS ---
 const botpressConfig = {
-  hostUrl: `https://electricfinder.es`, 
-  botId: BOTPRESS_BOT_ID,
-
+    // Definición de host y botId
+    hostUrl: `http://${BOTPRESS_IP}:3000`,
+    botId: BOTPRESS_BOT_ID,
+    
     // CLAVE: Ocultar el botón flotante por defecto de Botpress
     disableFloatingButton: true,
     
@@ -44,15 +45,10 @@ export default function Chatbot() {
       </Script>
 
       {/* SCRIPT DE INYECCIÓN (Carga el cerebro de Botpress) */}
-      // components/Chatbot.js (Líneas 43-46 aproximadamente)
-
-/* SCRIPT DE INYECCIÓN (Carga el cerebro de Botpress) */
-<Script 
-    // CLAVE: Usamos HTTPS y la ruta /botpress/ que Nginx manejará:
-    src={`https://electricfinder.es/botpress/assets/modules/channel-web/inject.js`}
-    strategy="afterInteractive" // Cambiado de lazyOnload para mayor fiabilidad
-/>
-
+      <Script 
+        src={`http://${BOTPRESS_IP}:3000/assets/modules/channel-web/inject.js`}
+        strategy="lazyOnload"
+      />
 
       {/* TU BOTÓN Y DISEÑO ORIGINAL */}
       <button

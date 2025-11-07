@@ -53,6 +53,9 @@ export default function Chatbot() {
     strategy="afterInteractive" // Cambiado de lazyOnload para mayor fiabilidad
 />
 
+// También debes asegurar que el hostUrl en la configuración use HTTPS:
+// En la parte superior del archivo:
+
 
       {/* TU BOTÓN Y DISEÑO ORIGINAL */}
       <button

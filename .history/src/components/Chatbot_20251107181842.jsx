@@ -10,9 +10,10 @@ const BOTPRESS_BOT_ID = process.env.NEXT_PUBLIC_BOTPRESS_ID || "default-bot";
 
 // --- CONFIGURACIÓN DE BOTPRESS ---
 const botpressConfig = {
-  hostUrl: `https://electricfinder.es`, 
-  botId: BOTPRESS_BOT_ID,
-
+    // Definición de host y botId
+    hostUrl: `http://${BOTPRESS_IP}:3000`,
+    botId: BOTPRESS_BOT_ID,
+    
     // CLAVE: Ocultar el botón flotante por defecto de Botpress
     disableFloatingButton: true,
     
@@ -53,6 +54,12 @@ export default function Chatbot() {
     strategy="afterInteractive" // Cambiado de lazyOnload para mayor fiabilidad
 />
 
+// También debes asegurar que el hostUrl en la configuración use HTTPS:
+// En la parte superior del archivo:
+const botpressConfig = {
+    hostUrl: `https://electricfinder.es`, 
+    botId: BOTPRESS_BOT_ID,
+};
 
       {/* TU BOTÓN Y DISEÑO ORIGINAL */}
       <button
