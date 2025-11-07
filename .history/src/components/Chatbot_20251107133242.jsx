@@ -17,7 +17,7 @@ const botpressConfig = {
     // CLAVE: Ocultar el botón flotante por defecto de Botpress
     disableFloatingButton: true,
     
-    
+    // Asegúrate de que los valores de abajo estén correctos
     containerWidth: '400px', 
     layout: 'floating',
 };

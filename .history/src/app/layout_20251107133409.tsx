@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
+import BotpressChat from "@/components/BotpressChat";
 import Chatbot from "@/components/Chatbot";
 
 
@@ -25,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <Chatbot />
+        <BotpressChat /> {}
       </body>
     </html>
   );
