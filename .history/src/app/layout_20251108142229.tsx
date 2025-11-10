@@ -18,6 +18,7 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
+    
       
       <GoogleTagManager gtmId="GTM-M757BHQP" />
       <body className="flex flex-col min-h-screen bg-white">
@@ -26,7 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <ChatbotButton /> 
+        <ChatbotButton /> {/* <-- El componente que tiene el cerebro de Botpress */}
       </body>
     </html>
   );

@@ -19,6 +19,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="es" className="!scroll-smooth">
       
+      {/* ¡QUITAMOS LA INYECCIÓN DE CONFIGURACIÓN GLOBAL DE AQUÍ! */}
+      
       <GoogleTagManager gtmId="GTM-M757BHQP" />
       <body className="flex flex-col min-h-screen bg-white">
         <Header />
@@ -26,7 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <ChatbotButton /> 
+        <ChatbotButton /> {/* <-- El componente que tiene el cerebro de Botpress */}
       </body>
     </html>
   );

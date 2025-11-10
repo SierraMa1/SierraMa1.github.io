@@ -4,7 +4,11 @@ const nextConfig = {
     return [
       {
         source: '/lite/:path*',
-        destination: 'http://217.154.181.135:3000/lite/:path*',
+        destination: '/api/botpress/lite/:path*',
+      },
+      {
+        source: '/api/v1/:path*',
+        destination: '/api/botpress/api/v1/:path*',
       },
     ]
   },

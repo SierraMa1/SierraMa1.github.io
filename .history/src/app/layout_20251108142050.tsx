@@ -3,9 +3,9 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from '@next/third-parties/google';
-import ChatbotButton from "@/components/ChatbotButton"; 
+import ChatbotButton from "@/components/ChatbotButton"; // Importación correcta
 
-
+// Solo se permite una declaración de metadata
 export const metadata = {
   title: {
     template: '%s | María Sierra Sánchez', 
@@ -14,10 +14,12 @@ export const metadata = {
   description: 'Transformación digital real para PYMES, desde la estrategia hasta la implementación técnica con React y Node.js.',
 };
 
-
+// Solo se permite una función RootLayout
 export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
+      
+      {/* ¡QUITAMOS LA INYECCIÓN DE CONFIGURACIÓN GLOBAL DE AQUÍ! */}
       
       <GoogleTagManager gtmId="GTM-M757BHQP" />
       <body className="flex flex-col min-h-screen bg-white">
@@ -26,7 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <ChatbotButton /> 
+        <ChatbotButton /> {/* <-- El componente que tiene el cerebro de Botpress */}
       </body>
     </html>
   );

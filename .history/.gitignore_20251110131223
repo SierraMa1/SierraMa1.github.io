@@ -39,12 +39,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.env.local
+.env
 
 .env
 
 next.config.js
-
-ChatbotButton.jsx
-
-next.config.ts

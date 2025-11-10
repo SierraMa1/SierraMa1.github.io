@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from '@next/third-parties/google';
-import ChatbotButton from "@/components/ChatbotButton"; 
+import ChatbotButton from "@/components/C"; 
 
 
 export const metadata = {

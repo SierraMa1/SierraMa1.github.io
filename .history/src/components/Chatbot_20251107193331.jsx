@@ -80,7 +80,7 @@ export default function Chatbot() {
       </Script>
 
       <Script 
-        src={`https://electricfinder.es/botpress/assets/modules/channel-web/inject.js`}
+        src={`http://217.154.181.135:3000//assets/modules/channel-web/inject.js`}
         strategy="afterInteractive" 
       />
 

@@ -1,9 +1,10 @@
-// app/layout.tsx
+
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from '@next/third-parties/google';
-import ChatbotButton from "@/components/ChatbotButton"; 
+import Script from 'next/script';
+import ChatbotButton from "@/components/ChatbotButton";
 
 
 export const metadata = {
@@ -14,11 +15,9 @@ export const metadata = {
   description: 'Transformación digital real para PYMES, desde la estrategia hasta la implementación técnica con React y Node.js.',
 };
 
-
 export default async function RootLayout({ children }: { children: React.ReactNode })  {
   return (
     <html lang="es" className="!scroll-smooth">
-      
       <GoogleTagManager gtmId="GTM-M757BHQP" />
       <body className="flex flex-col min-h-screen bg-white">
         <Header />
@@ -26,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
-        <ChatbotButton /> 
+        <ChatbotB />
       </body>
     </html>
   );
