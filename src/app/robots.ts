@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next';
 import { SITE_URL } from '@/constants/links';
 
+/** Obligatorio con `output: 'export'` (GitHub Pages, etc.) */
+export const dynamic = 'force-static';
+
 const BASE_URL = SITE_URL;
 
 export default function robots(): MetadataRoute.Robots {
