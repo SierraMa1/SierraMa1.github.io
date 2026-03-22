@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@next/third-parties": "^16.0.1",
+    "@types/unist": "^3.0.3",
     "clsx": "^2.1.1",
+    "comma-separated-tokens": "^2.0.3",
+    "dequal": "^2.0.3",
     "lucide-react": "^0.454.0",
     "motion": "^11.11.17",
     "next": "^16.0.8",
@@ -20,7 +23,10 @@
     "react-type-animation": "^3.2.0",
     "swiper": "^12.0.2",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "vfile": "^6.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
