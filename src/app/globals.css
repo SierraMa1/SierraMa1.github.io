@@ -100,3 +100,232 @@ body {
 #proyectos .swiper-button-next {
   display: none;
 }
+
+/* ════════════════════════════════════════════════════════════
+   TEMA FORZADO — MODO OSCURO TOTAL (data-theme="dark")
+   ════════════════════════════════════════════════════════════
+   Secciones que normalmente son claras (blancas/grises) pasan a oscuro.
+   El Hero (#inicio), Software, FAQ, Proyectos etc. ya son oscuros → no tocar.
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Fondos de secciones claras → oscuro ── */
+[data-theme="dark"] #servicios,
+[data-theme="dark"] #sobre-mi,
+[data-theme="dark"] #recursos,
+[data-theme="dark"] #youtube {
+  background-color: #0a0a0f !important;
+}
+
+/* ── Cabeceras (h2, h3) en secciones claras → blanco ── */
+[data-theme="dark"] #servicios h2,
+[data-theme="dark"] #servicios h3,
+[data-theme="dark"] #sobre-mi h2,
+[data-theme="dark"] #sobre-mi h3,
+[data-theme="dark"] #recursos h2,
+[data-theme="dark"] #recursos h3,
+[data-theme="dark"] #youtube h2,
+[data-theme="dark"] #youtube h3 {
+  color: #ffffff !important;
+}
+
+/* ── Párrafos en secciones claras → gris claro ── */
+[data-theme="dark"] #servicios p,
+[data-theme="dark"] #sobre-mi p,
+[data-theme="dark"] #recursos p,
+[data-theme="dark"] #youtube p {
+  color: rgb(156 163 175) !important;
+}
+
+/* ── Bullets de servicios ── */
+[data-theme="dark"] #servicios li,
+[data-theme="dark"] #recursos li {
+  color: rgb(156 163 175) !important;
+}
+
+/* ── Todas las cards con fondo blanco/gris dentro de secciones claras ── */
+[data-theme="dark"] #servicios [class*="bg-white"],
+[data-theme="dark"] #servicios [class*="bg-gray"],
+[data-theme="dark"] #sobre-mi [class*="bg-white"],
+[data-theme="dark"] #sobre-mi [class*="bg-gray"],
+[data-theme="dark"] #recursos [class*="bg-white"],
+[data-theme="dark"] #recursos [class*="bg-gray"],
+[data-theme="dark"] #youtube [class*="bg-white"],
+[data-theme="dark"] #youtube [class*="bg-gray"] {
+  background-color: rgb(255 255 255 / 0.05) !important;
+  border-color: rgb(255 255 255 / 0.08) !important;
+}
+
+/* ── Textos grises de la AboutSection en modo oscuro ── */
+[data-theme="dark"] #sobre-mi [class*="text-gray-900"],
+[data-theme="dark"] #sobre-mi [class*="text-gray-800"] {
+  color: #ffffff !important;
+}
+[data-theme="dark"] #sobre-mi [class*="text-gray-700"],
+[data-theme="dark"] #sobre-mi [class*="text-gray-600"],
+[data-theme="dark"] #sobre-mi [class*="text-gray-500"],
+[data-theme="dark"] #sobre-mi [class*="text-gray-400"] {
+  color: rgb(156 163 175) !important;
+}
+
+/* ── Borders de cards en About ── */
+[data-theme="dark"] #sobre-mi [class*="border-gray"] {
+  border-color: rgb(255 255 255 / 0.08) !important;
+}
+
+/* ── YouTube: spans y links que quedaban oscuros ── */
+[data-theme="dark"] #youtube [class*="text-gray-900"],
+[data-theme="dark"] #youtube [class*="text-gray-700"] {
+  color: #ffffff !important;
+}
+[data-theme="dark"] #youtube [class*="text-gray-500"],
+[data-theme="dark"] #youtube [class*="text-gray-400"] {
+  color: rgb(156 163 175) !important;
+}
+
+/* ── Header en modo oscuro ── */
+[data-theme="dark"] header {
+  background-color: #0a0a0f !important;
+  border-color: rgb(255 255 255 / 0.08) !important;
+}
+[data-theme="dark"] header [class*="text-gray-900"],
+[data-theme="dark"] header [class*="text-gray-600"] {
+  color: rgb(209 213 219) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TEMA FORZADO — MODO CLARO TOTAL (data-theme="light")
+   ════════════════════════════════════════════════════════════
+   IMPORTANTE: El Hero (#inicio) NO se toca nunca — el vídeo de
+   fondo quedaría ilegible si forzásemos fondo blanco.
+
+   Las secciones oscuras pasan a blanco y sus textos a oscuro.
+   SoftwareSection usa inline style="background: linear-gradient(...)"
+   por lo que se necesita background: (shorthand) con !important.
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Secciones oscuras → fondo blanco ── */
+/* #inicio (Hero) queda EXCLUIDO a propósito */
+[data-theme="light"] #problema,
+[data-theme="light"] #historia,
+[data-theme="light"] #proyectos,
+[data-theme="light"] #faq {
+  background-color: #ffffff !important;
+}
+
+/* SoftwareSection usa inline style="background: linear-gradient(...)"
+   background-color no lo sobreescribe, hay que usar el shorthand */
+[data-theme="light"] #software {
+  background: #ffffff !important;
+}
+
+/* CTAFinalSection: mismo caso que Software */
+[data-theme="light"] #contacto {
+  background: #f9f9ff !important;
+}
+
+/* ── Atenuamos decoraciones de fondo (blobs violeta) en modo claro ── */
+[data-theme="light"] #problema [class*="blur"],
+[data-theme="light"] #software [class*="blur"],
+[data-theme="light"] #faq [class*="blur"],
+[data-theme="light"] #historia [class*="blur"] {
+  opacity: 0.12 !important;
+}
+
+/* ── Textos text-white → oscuro en secciones forzadas a blanco ──
+   Usamos :not([class*="text-transparent"]) para NO romper los textos
+   con gradiente (bg-clip-text) que necesitan color: transparent */
+[data-theme="light"] #problema [class*="text-white"]:not([class*="text-transparent"]),
+[data-theme="light"] #software [class*="text-white"]:not([class*="text-transparent"]),
+[data-theme="light"] #historia [class*="text-white"]:not([class*="text-transparent"]),
+[data-theme="light"] #proyectos [class*="text-white"]:not([class*="text-transparent"]),
+[data-theme="light"] #faq [class*="text-white"]:not([class*="text-transparent"]),
+[data-theme="light"] #contacto [class*="text-white"]:not([class*="text-transparent"]) {
+  color: #111827 !important;
+}
+
+/* ── text-gray-400/500 → gris medio legible sobre blanco ── */
+[data-theme="light"] #problema [class*="text-gray-4"],
+[data-theme="light"] #software [class*="text-gray-4"],
+[data-theme="light"] #historia [class*="text-gray-4"],
+[data-theme="light"] #proyectos [class*="text-gray-4"],
+[data-theme="light"] #faq [class*="text-gray-4"],
+[data-theme="light"] #contacto [class*="text-gray-4"],
+[data-theme="light"] #problema [class*="text-gray-5"],
+[data-theme="light"] #software [class*="text-gray-5"],
+[data-theme="light"] #historia [class*="text-gray-5"],
+[data-theme="light"] #proyectos [class*="text-gray-5"],
+[data-theme="light"] #faq [class*="text-gray-5"],
+[data-theme="light"] #contacto [class*="text-gray-5"],
+[data-theme="light"] #problema [class*="text-gray-6"],
+[data-theme="light"] #software [class*="text-gray-6"],
+[data-theme="light"] #historia [class*="text-gray-6"],
+[data-theme="light"] #proyectos [class*="text-gray-6"],
+[data-theme="light"] #faq [class*="text-gray-6"],
+[data-theme="light"] #contacto [class*="text-gray-6"] {
+  color: #6b7280 !important;
+}
+
+/* ── h2 y h3 ya cubiertos por el selector text-white arriba,
+   pero los añadimos por si acaso para garantía ── */
+[data-theme="light"] #problema h2,
+[data-theme="light"] #problema h3,
+[data-theme="light"] #software h2,
+[data-theme="light"] #software h3,
+[data-theme="light"] #historia h2,
+[data-theme="light"] #historia h3,
+[data-theme="light"] #proyectos h2,
+[data-theme="light"] #proyectos h3,
+[data-theme="light"] #faq h2,
+[data-theme="light"] #faq h3,
+[data-theme="light"] #contacto h2,
+[data-theme="light"] #contacto h3 {
+  color: #111827 !important;
+}
+
+/* ── Cards oscuras → fondo claro ── */
+[data-theme="light"] #problema [class*="rounded-2xl"],
+[data-theme="light"] #problema [class*="rounded-xl"] {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(209, 213, 219, 0.7) !important;
+}
+
+[data-theme="light"] #faq [class*="rounded-xl"] {
+  background-color: #f3f4f6 !important;
+  border-color: rgb(209 213 219) !important;
+}
+
+[data-theme="light"] #proyectos [class*="rounded-2xl"],
+[data-theme="light"] #proyectos [class*="rounded-xl"] {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(209, 213, 219, 0.6) !important;
+}
+
+/* ── Formulario de contacto en modo claro ── */
+[data-theme="light"] #contacto [class*="rounded-2xl"],
+[data-theme="light"] #contacto [class*="rounded-xl"] {
+  background-color: #f3f4f6 !important;
+  border-color: rgb(209 213 219) !important;
+}
+
+[data-theme="light"] #contacto input,
+[data-theme="light"] #contacto textarea,
+[data-theme="light"] #contacto select {
+  background-color: #ffffff !important;
+  border-color: rgb(209 213 219) !important;
+  color: #111827 !important;
+}
+
+/* Animación de entrada para listas (Playground, etc.) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}

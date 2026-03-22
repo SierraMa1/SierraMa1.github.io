@@ -1,17 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import type { Project } from '@/types';
 
-// 1. DEFINIMOS EL TIPO 'PROJECT' (BUENA PRÁCTICA)
-// Asegúrate de que este tipo coincida con tu 'projectsData'
-interface Project {
-  id: number | string;
-  image: string;
-  title: string;
-  description: string;
-}
-
-// 2. APLICAMOS EL TIPO A LAS PROPS
 export default function ProjectCarouselCard({ project }: { project: Project }) {
   return (
     <Link 

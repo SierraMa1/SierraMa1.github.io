@@ -36,7 +36,9 @@ export function generateStaticParams() {
 
 
 function getProjectById(id: string) {
-  return projectsData.find((project) => project.id === parseInt(id));
+  const numId = parseInt(id, 10);
+  if (Number.isNaN(numId)) return undefined;
+  return projectsData.find((project) => project.id === numId);
 }
 
 

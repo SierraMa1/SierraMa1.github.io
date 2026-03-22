@@ -15,7 +15,7 @@ export async function GET() {
     // Devuelvo el mensaje como un JSON
     return NextResponse.json(data);
 
-  } catch (error) {
+  } catch {
     // un try...catch por si algo falla
     return new NextResponse(
       JSON.stringify({ error: 'Error al procesar la solicitud' }),

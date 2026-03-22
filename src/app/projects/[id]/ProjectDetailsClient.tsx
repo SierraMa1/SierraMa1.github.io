@@ -3,24 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-type Project = {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  detailedDescription: {
-    contexto: string;
-    retos: string[];
-    soluciones: string[];
-  };
-  results?: {
-    metric?: string;
-    description: string;
-  }[];
-  technologies: string[];
-};
-
+import type { Project } from "@/types";
 
 const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => {
   if (!project) {
@@ -102,7 +85,7 @@ const ProjectDetailsClient = ({ project }: { project: Project | undefined }) => 
             <p className="text-gray-300 mb-6">
               Descubre cómo mi enfoque estratégico y técnico puede impulsar tu negocio.
             </p>
-            <Link href="/#contact" 
+            <Link href="/#contacto" 
               className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
               >
             Contactar Ahora
